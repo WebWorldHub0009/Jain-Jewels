@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+.italiana-font {
+  font-family: 'Italiana', serif;
+  letter-spacing: 0.5px;
+}
+
+/* Floating infinite animation */
+@keyframes floatIcon {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.floating-icon {
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.italiana-font {
+  font-family: 'Italiana', serif;
+  letter-spacing: 0.5px;
+}
+
+.signature-font {
+  font-family: 'Great Vibes', cursive;
+}
