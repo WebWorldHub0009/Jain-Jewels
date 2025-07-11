@@ -23,8 +23,8 @@ const ElegantNavbar = () => {
       name: "Collection",
       dropdown: true,
       items: [
-        { name: "Necklaces", path: "/collection/necklaces" },
-        { name: "Earrings", path: "/collection/earrings" },
+        { name: "Jadau", path: "/collection/jadau" },
+        { name: "Earrings", path: "/collection/diamond" },
         { name: "Bracelets", path: "/collection/bracelets" },
         { name: "Rings", path: "/collection/rings" },
         { name: "Anklets", path: "/collection/anklets" },
