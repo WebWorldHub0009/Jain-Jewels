@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import certified from "../assets/images/p1.jpg";
-import craftsmanship from "../assets/images/p1.jpg";
-import custom from "../assets/images/p2.jpg";
+import certified from "../assets/images/diamond-img.jpg";
+import craftsmanship from "../assets/images/owner/platinum.jpg";
+import custom from "../assets/images/owner/gold.avif";
 import support from "../assets/images/p2.jpg";
 import bg from "../assets/images/new-bg.jpg"; // ✅ New BG image path
 
