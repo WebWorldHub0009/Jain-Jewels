@@ -59,7 +59,7 @@ const PremiumGallery = () => {
 
       <section className="w-full bg-[#FAF9F6] py-20 px-6 text-[#2C2C2C]">
         {/* Heading */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-5">
           <h2 className="text-5xl md:text-6xl italiana-font text-[#5a4d23] mb-3">
             A Glimpse Into Our World of Elegance
           </h2>

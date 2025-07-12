@@ -31,13 +31,13 @@ const AboutSection = () => {
         >
           <p className="text-sm text-gray-700 mb-1">Welcome to Jain Jewels</p>
           <h2 className="text-4xl font-extrabold text-gray-900 leading-snug italiana-font">
-            <span className="text-yellow-500">Jain Jewels</span> – Crafting Legacy in Gold & Diamonds
+            <span className="text-[#D4AF37]">Jain Jewels</span> – Crafting Legacy in Gold & Diamonds
           </h2>
           <p className="text-gray-600 text-xl max-w-md tracking-wider signature-font mt-3">
             For decades, we’ve celebrated tradition and elegance by designing exquisite jewellery that defines heritage and luxury.
           </p>
           <Link to="/collection">
-            <button className="cursor-pointer mt-6 bg-yellow-500 hover:bg-yellow-600 transition px-6 py-3 rounded-full text-white text-sm font-medium shadow-md">
+            <button className="cursor-pointer mt-6 bg-[#D4AF37] hover:bg-[#ffe797] transition px-6 py-3 rounded-full text-white text-sm font-medium shadow-md">
               Explore Collection
             </button>
           </Link>
@@ -50,7 +50,7 @@ const AboutSection = () => {
               { title: 'Custom Jewellery', icon: <FaUserTie />, desc: 'Tailored to your Traditions' },
             ].map((item, index) => (
               <div key={index} className="flex flex-col items-center space-y-2">
-                <div className="text-yellow-500 text-3xl transition-transform duration-300 hover:scale-110 hover:-rotate-3">
+                <div className="text-[#D4AF37] text-3xl transition-transform duration-300 hover:scale-110 hover:-rotate-3">
                   {item.icon}
                 </div>
                 <h4 className="font-semibold text-gray-900">{item.title}</h4>
@@ -91,19 +91,19 @@ const AboutSection = () => {
 
           {/* Floating Cards */}
           <div className="absolute -top-6 -left-6 bg-white/30 backdrop-blur-md border border-white/30 rounded-xl shadow-xl px-4 py-2 flex items-center gap-2 text-sm z-20">
-            <FaGem className="text-yellow-500" />
+            <FaGem className="text-[#D4AF37]" />
             <div>
               <p className="font-semibold text-gray-800">5000+ Designs</p>
             </div>
           </div>
 
           <div className="absolute top-4 right-0 bg-white/30 backdrop-blur-md border border-white/30 rounded-xl shadow-xl px-4 py-2 flex items-center gap-2 text-sm z-20">
-            <FaStar className="text-yellow-500" />
+            <FaStar className="text-[#D4AF37]" />
             <p className="font-semibold text-gray-800">4.9 Trust Score</p>
           </div>
 
           <div className="absolute bottom-0 left-4 bg-white/30 backdrop-blur-md border border-white/30 rounded-xl shadow-xl px-4 py-2 flex items-center gap-2 text-sm z-20">
-            <FaUserTie className="text-yellow-500" />
+            <FaUserTie className="text-[#D4AF37]" />
             <div>
               <p className="font-semibold text-gray-800">3 Generations</p>
               <p className="text-gray-500 text-xs">of Trust & Craft</p>
@@ -118,7 +118,7 @@ const AboutSection = () => {
         transition={{ repeat: Infinity, duration: 2 }}
         className="mt-10 flex justify-center relative z-10"
       >
-        <FaChevronDown className="text-yellow-500 text-xl" />
+        <FaChevronDown className="text-[#D4AF37] text-xl" />
       </motion.div>
     </section>
   );
