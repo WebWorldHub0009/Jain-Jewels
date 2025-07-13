@@ -1,31 +1,54 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Category Icons
-import braceletIcon from "../assets/images/popular/antique.png";
-import chainIcon from "../assets/images/popular/diamond.png";
-import earringIcon from "../assets/images/popular/gold.png";
-import ringIcon from "../assets/images/popular/italian.png";
-import necklaceIcon from "../assets/images/popular/jadaav.png";
-import pendantIcon from "../assets/images/popular/polki.png";
+import italianIcon from "../assets/images/popular/italian.png";
+import diamondIcon from "../assets/images/popular/diamond.png";
+import goldIcon from "../assets/images/popular/gold.png";
+import antiqueIcon from "../assets/images/popular/antique.png";
+import jadaauIcon from "../assets/images/popular/jadaav.png";
 
 // Banner Images
 import offerBanner from "../assets/images/p1.jpg";
 import braceletBanner from "../assets/images/p2.jpg";
 
 const categories = [
-  { img: braceletIcon, label: "BRACELETS", count: "27 Items" },
-  { img: chainIcon, label: "CHAINS & DANGLES", count: "21 Items" },
-  { img: earringIcon, label: "EARRINGS", count: "18 Items" },
-  { img: ringIcon, label: "ENGAGEMENT RINGS", count: "9 Items" },
-  { img: necklaceIcon, label: "NECKLACES", count: "15 Items" },
-  { img: pendantIcon, label: "PENDANT", count: "22 Items" },
+  {
+    img: italianIcon,
+    label: "Italian Grace",
+    subtext: "Luxury in Every Curve",
+    path: "/collection/italian",
+  },
+  {
+    img: diamondIcon,
+    label: "Diamond Sparkle",
+    subtext: "Shine That Lasts Forever",
+    path: "/collection/diamond",
+  },
+  {
+    img: goldIcon,
+    label: "Golden Radiance",
+    subtext: "Tradition Meets Style",
+    path: "/collection/gold",
+  },
+  {
+    img: antiqueIcon,
+    label: "Antique Charm",
+    subtext: "Vintage with a Soul",
+    path: "/collection/antique",
+  },
+  {
+    img: jadaauIcon,
+    label: "Jadaau Royale",
+    subtext: "Crafted for Queens",
+    path: "/collection/jadaau",
+  },
 ];
 
 const PopularCategories = () => {
   return (
-    <section className="w-full py-20 px-4 bg-white text-[#2C2C2C]">
+    <section className="w-full py-20 px-4 bg-[#fffcf5] text-[#2C2C2C]">
       <div className="max-w-7xl mx-auto">
-
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-semibold italiana-font mb-2 tracking-wide">
@@ -37,22 +60,27 @@ const PopularCategories = () => {
         </div>
 
         {/* Category Icons Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 mb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 mb-16">
           {categories.map((cat, idx) => (
-            <div
+            <Link
+              to={cat.path}
               key={idx}
               className="flex flex-col items-center group transition-transform duration-300 hover:scale-105"
             >
-              <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#FAF9F6] flex items-center justify-center overflow-hidden shadow-md floating-icon transition duration-500 group-hover:shadow-lg group-hover:shadow-[#D4AF37]/50">
-                <img src={cat.img} alt={cat.label} className="w-14 h-14 object-contain" />
+              <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full bg-[#FAF9F6] flex items-center justify-center overflow-hidden shadow-md floating-icon transition duration-500 group-hover:shadow-lg group-hover:shadow-black/50">
+                <img
+                  src={cat.img}
+                  alt={cat.label}
+                  className="w-16 h-16 object-contain"
+                />
               </div>
-              <p className="mt-3 text-sm font-semibold uppercase text-[#2C2C2C]">{cat.label}</p>
-              <p className="text-xs text-gray-500">{cat.count}</p>
-            </div>
+              <p className="mt-3 text-sm font-semibold uppercase text-[#2C2C2C] text-center">{cat.label}</p>
+              <p className="text-xs text-gray-500 text-center">{cat.subtext}</p>
+            </Link>
           ))}
         </div>
 
-        {/* Banners With Always Visible Text and Smooth Zoom */}
+        {/* Banners */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Left Banner */}
           <div className="relative overflow-hidden rounded-xl group shadow-md hover:shadow-xl transition duration-500">
@@ -82,7 +110,6 @@ const PopularCategories = () => {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

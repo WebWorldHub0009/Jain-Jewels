@@ -6,7 +6,7 @@ import { FaStar } from "react-icons/fa";
 
 const FeaturedSection = () => {
   return (
-    <section className="w-full py-20 px-4 bg-[#FDFBF7]">
+    <section className="w-full py-20 px-4 bg-[#FDFBF7] overflow-x-hidden">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
         {/* Left Image Block */}
         <motion.div

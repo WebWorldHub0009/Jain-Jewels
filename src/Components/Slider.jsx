@@ -12,6 +12,7 @@ import jm1 from "../assets/images/ms1.jpg";
 import jm2 from "../assets/images/ms2.jpg";
 import jm3 from "../assets/images/ms3.jpg";
 import jm4 from "../assets/images/ms4.jpg";
+import { Link } from "react-router-dom";
 
 // Slides
 const jainSlidesDesktop = [
@@ -107,7 +108,7 @@ const JainJewelsSliderCore = ({ slides }) => {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="text-left max-w-xl text-black "
+          className=" max-w-xl text-gray-100 text-center md:text-left md:text-black "
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl mb-4 italic font-[500] tracking-wide font-serif"
               style={{ fontFamily: `'Great Vibes', cursive` }}>
@@ -116,9 +117,14 @@ const JainJewelsSliderCore = ({ slides }) => {
           <p className="text-sm sm:text-base md:text-lg mb-6 drop-shadow-md leading-relaxed font-light">
             {slides[currentImage].description}
           </p>
-          <button className="border border-white px-6 py-2 text-white hover:bg-white hover:text-black transition duration-300 rounded-sm uppercase tracking-wider">
-            Read More
-          </button>
+          <Link to='/about'>
+          <button className="cursor-pointer border px-6 py-2 rounded-sm uppercase tracking-wider transition duration-300
+  text-white border-white hover:bg-white hover:text-black 
+  md:text-black md:border-black md:hover:bg-gray-100 md:hover:text-black">
+  Know More
+</button>
+          </Link>
+
         </motion.div>
       </div>
     </section>

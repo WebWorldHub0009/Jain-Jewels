@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   FaFacebookF,
@@ -13,9 +13,21 @@ import { IoDiamondOutline, IoChevronDownOutline } from "react-icons/io5";
 const ElegantNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const navRef = useRef();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuOpen && navRef.current && !navRef.current.contains(event.target)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [menuOpen]);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -25,9 +37,9 @@ const ElegantNavbar = () => {
       dropdown: true,
       items: [
         { name: "Jadaau", path: "/collection/jadaau" },
-        { name: "Diamond Jewelery", path: "/collection/diamond" },
-        { name: "Gold Jewelery", path: "/collection/gold" },
-        { name: "Antique Jewelery", path: "/collection/antique" },
+        { name: "Diamond Jewellery", path: "/collection/diamond" },
+        { name: "Gold Jewellery", path: "/collection/gold" },
+        { name: "Antique Jewellery", path: "/collection/antique" },
         { name: "Italian Collection", path: "/collection/italian" },
       ],
     },
@@ -44,14 +56,16 @@ const ElegantNavbar = () => {
 
   return (
     <>
+      {/* Top Notice */}
       <div className="w-full bg-[#FDFDFD] border-b border-gray-200 text-xs text-[#2C2C2C] py-1 px-4 text-center tracking-wide">
         ✨ Luxury crafted jewellery. Free shipping on orders above ₹5,000 ✨
       </div>
 
-      <header className="w-full z-50 bg-white shadow-md border-b border-gray-200 relative">
+      {/* Header */}
+      <header className="w-full z-[100] bg-white shadow-md border-b border-gray-200 relative">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
           {/* Left Nav */}
-          <div className="hidden md:flex gap-6 text-[#2C2C2C] text-sm font-medium">
+          <div className="hidden md:flex gap-6 text-[#2C2C2C] text-sm font-medium relative">
             {navLinks.map((link) =>
               link.dropdown ? (
                 <div
@@ -59,14 +73,13 @@ const ElegantNavbar = () => {
                   className="relative group cursor-pointer"
                   onMouseEnter={() => setDropdownOpen(true)}
                   onMouseLeave={() => setDropdownOpen(false)}
-                  onClick={toggleDropdown}
                 >
                   <span className="flex items-center gap-1 hover:text-[#D4AF37] transition">
                     {link.name}
                     <IoChevronDownOutline className="mt-[1px] text-sm group-hover:rotate-180 transition-transform duration-300" />
                   </span>
                   <div
-                    className={`absolute top-full left-0 mt-2 w-52 bg-white rounded-md shadow-md border border-gray-100 z-10 transition-all duration-300 ${
+                    className={`absolute top-full left-0 mt-2 w-52 bg-white rounded-md shadow-md border border-gray-100 z-50 transition-all duration-300 ${
                       dropdownOpen ? "opacity-100 visible" : "opacity-0 invisible"
                     }`}
                   >
@@ -112,7 +125,13 @@ const ElegantNavbar = () => {
 
             <div className="flex gap-3 text-[#2C2C2C] ml-2">
               {socialLinks.map((item, i) => (
-                <a key={i} href={item.url} target="_blank" rel="noreferrer" className="hover:text-[#D4AF37] text-lg">
+                <a
+                  key={i}
+                  href={item.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#D4AF37] text-lg"
+                >
                   {item.icon}
                 </a>
               ))}
@@ -121,17 +140,23 @@ const ElegantNavbar = () => {
 
           {/* Hamburger */}
           <div className="md:hidden text-xl text-[#2C2C2C] z-50" onClick={toggleMenu}>
-            {!menuOpen ? <FaBars /> : <FaTimes />}
+            <FaBars />
           </div>
         </div>
 
-        {/* Mobile Sliding Panel */}
+        {/* Mobile Nav Panel */}
         <div
-          className={`fixed top-0 left-0 h-screen w-[85%] max-w-xs bg-white z-40 transform transition-transform duration-500 ease-in-out ${
+          ref={navRef}
+          className={`fixed top-0 left-0 h-screen w-[85%] max-w-xs bg-white z-99 transform transition-transform duration-500 ease-in-out shadow-lg border-r border-gray-200 p-6 overflow-y-auto ${
             menuOpen ? "translate-x-0" : "-translate-x-full"
-          } shadow-lg border-r border-gray-200 p-6 overflow-y-auto`}
+          }`}
         >
-          <ul className="space-y-4 text-[#2C2C2C] text-sm font-medium">
+          {/* Cross Icon Inside Panel */}
+          <div className="absolute top-4 right-4 text-xl cursor-pointer text-[#2C2C2C]" onClick={toggleMenu}>
+            <FaTimes />
+          </div>
+
+          <ul className="space-y-4 text-[#2C2C2C] text-sm font-medium mt-10">
             {navLinks.map((link) =>
               link.dropdown ? (
                 <div key={link.name}>
@@ -148,7 +173,14 @@ const ElegantNavbar = () => {
                     <ul className="pl-4 mt-2 space-y-1 text-sm text-gray-700">
                       {link.items.map((item) => (
                         <li key={item.name}>
-                          <Link to={item.path} onClick={toggleMenu} className="block hover:text-[#D4AF37]">
+                          <Link
+                            to={item.path}
+                            onClick={() => {
+                              toggleMenu();
+                              setDropdownOpen(false);
+                            }}
+                            className="block hover:text-[#D4AF37]"
+                          >
                             {item.name}
                           </Link>
                         </li>
@@ -175,8 +207,12 @@ const ElegantNavbar = () => {
 
           {/* Contact Info */}
           <div className="text-sm text-gray-600 space-y-2">
-            <p><strong>Email:</strong> contact@jainjewels.com</p>
-            <p><strong>Phone:</strong> +91 98918 72601</p>
+            <p>
+              <strong>Email:</strong> contact@jainjewels.com
+            </p>
+            <p>
+              <strong>Phone:</strong> +91 98918 72601
+            </p>
           </div>
 
           {/* Social Icons */}

@@ -5,12 +5,13 @@ import statsImage2 from "../assets/images/n2.jpg";
 import bgDiamond from "../assets/images/bg-new.jpg"; // Background image
 
 import { FaRegGem, FaSmileBeam, FaRing, FaUsers } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const stats = [
-  { label: "Years of Legacy", value: "25+", icon: <FaRegGem className="text-4xl text-[#D4AF37]" /> },
-  { label: "Happy Customers", value: "50K+", icon: <FaSmileBeam className="text-4xl text-[#D4AF37]" /> },
-  { label: "Jewellery Sold", value: "200K+", icon: <FaRing className="text-4xl text-[#D4AF37]" /> },
-  { label: "Artisan Experts", value: "100+", icon: <FaUsers className="text-4xl text-[#D4AF37]" /> },
+  { label: "Years of Legacy", value: "25+", icon: <FaRegGem className="text-4xl text-gray-600" /> },
+  { label: "Happy Customers", value: "50K+", icon: <FaSmileBeam className="text-4xl text-gray-600" /> },
+  { label: "Jewellery Sold", value: "200K+", icon: <FaRing className="text-4xl text-gray-600" /> },
+  { label: "Artisan Experts", value: "100+", icon: <FaUsers className="text-4xl text-gray-600" /> },
 ];
 
 const WebsiteStats = () => {
@@ -62,13 +63,15 @@ const WebsiteStats = () => {
               <path d="M12 0L15.09 8H24L17.45 12.36L20.54 20.36L12 15L3.45 20.36L6.54 12.36L0 8H8.91L12 0Z" />
             </svg>
 
-            <p className="text-sm text-[#D4AF37] font-semibold mb-2 tracking-wider italian-font">TOP COLLECTION</p>
-            <h3 className="text-lg font-semibold text-[#2C2C2C] leading-snug tracking-wide italian-font">
+            <p className="text-2xl text-black font-semibold mb-2 tracking-wider signature-font">Top Collection</p>
+            <h3 className="text-base font-semibold text-[#2C2C2C] leading-snug tracking-wide italiana-font">
               Jewelry That Boosts Your Morals And Lights Up Your Day
             </h3>
+            <Link to='/gallery'>
             <button className="mt-4 px-5 py-2 border border-[#2C2C2C] hover:bg-[#2C2C2C] hover:text-white transition-all duration-300 text-sm font-semibold rounded-full">
-              All Collection
+              Showcase
             </button>
+            </Link>
           </div>
         </motion.div>
 
@@ -81,7 +84,7 @@ const WebsiteStats = () => {
           className="text-center md:text-left"
         >
           <h2 className="text-3xl sm:text-5xl font-['Playfair_Display'] text-[#2C2C2C] mb-6 leading-snug italiana-font">
-            Our <span className="text-[#D4AF37] shimmer">Glorious Journey</span>
+            Our <span className="text-black shimmer">Glorious Journey</span>
           </h2>
           <p className="text-gray-600 text-base sm:text-lg mb-10 max-w-xl leading-relaxed tracking-wide signature-font">
             Jain Jewellers has become a symbol of trust and timeless elegance. Every piece is a testament to excellence, reflecting our legacy of brilliance.
@@ -99,12 +102,12 @@ const WebsiteStats = () => {
                 <motion.div
                   whileHover={{ rotate: [0, 10, -10, 0] }}
                   transition={{ duration: 0.6 }}
-                  className="p-4 bg-[#fff7e9] rounded-full shadow-md"
+                  className="p-4 bg-[#fffbf4] rounded-full shadow-md"
                 >
                   {stat.icon}
                 </motion.div>
                 <div>
-                  <h3 className="text-3xl font-bold text-[#2C2C2C] shimmer-gold">{stat.value}</h3>
+                  <h3 className="text-3xl font-bold text-[#2C2C2C]">{stat.value}</h3>
                   <p className="text-sm text-gray-600 tracking-wide uppercase">{stat.label}</p>
                 </div>
               </motion.div>
