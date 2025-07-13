@@ -22,15 +22,15 @@ import {
 } from "react-icons/fa";
 import HeroDiamondCollection from "../Components/HeroDiamondCollection";
 
-import d1 from "../assets/images/f1.jpg";
-import d2 from "../assets/images/f1.jpg";
-import d3 from "../assets/images/f1.jpg";
-import d4 from "../assets/images/f1.jpg";
-import d5 from "../assets/images/f1.jpg";
-import d6 from "../assets/images/f1.jpg";
-import d7 from "../assets/images/f1.jpg";
-import d8 from "../assets/images/f1.jpg";
-import d9 from "../assets/images/f1.jpg";
+import d1 from "../assets/images/diamond/d1.jpg";
+import d2 from "../assets/images/diamond/d2.jpg";
+import d3 from "../assets/images/diamond/d3.jpg";
+import d4 from "../assets/images/diamond/d4.jpg";
+import d5 from "../assets/images/diamond/d5.jpg";
+import d6 from "../assets/images/diamond/d6.jpg";
+import d7 from "../assets/images/diamond/d7.jpg";
+import d8 from "../assets/images/diamond/d8.jpg";
+import d9 from "../assets/images/diamond/d9.jpg";
 
 const diamondItems = [
   {

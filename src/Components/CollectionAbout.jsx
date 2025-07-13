@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import img1 from "../assets/images/p1.jpg";
-import img2 from "../assets/images/p1.jpg";
-import img3 from "../assets/images/p1.jpg";
-import img4 from "../assets/images/p1.jpg";
-import img5 from "../assets/images/p1.jpg";
-import img6 from "../assets/images/p1.jpg";
+import img1 from "../assets/images/gold/g3.jpg";
+import img2 from "../assets/images/gold/g6.jpg";
+import img3 from "../assets/images/diamond/d3.jpg";
+import img4 from "../assets/images/diamond/d8.jpg";
+import img5 from "../assets/images/gold/g7.jpg";
+import img6 from "../assets/images/antique/a8.jpg";
 import img7 from "../assets/images/p1.jpg";
 import img8 from "../assets/images/p1.jpg";
 import img9 from "../assets/images/p1.jpg";
@@ -43,94 +43,112 @@ const CollectionAbout = () => {
       </motion.div>
 
       {/* First Row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <img src={img1} alt="Jewellery 1" className="w-full h-full object-cover rounded-md shadow-lg" />
-        </motion.div>
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={1}
-          className="bg-white flex flex-col items-center justify-center text-center p-8 rounded-md shadow-xl"
-        >
-          <h2 className="text-xl font-bold uppercase mb-2 text-[#2C2C2C]">Up To 50% Off</h2>
-          <p className="text-sm text-gray-700 mb-4">
-            Discover exquisite gold and diamond sets that radiate tradition and opulence.
-          </p>
-          <button className="bg-black text-white px-6 py-2 text-sm uppercase hover:bg-[#D4AF37] hover:text-black transition rounded-full">
-            Shop Now
-          </button>
-        </motion.div>
-        <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}>
-          <img src={img2} alt="Jewellery 2" className="w-full h-full object-cover rounded-md shadow-lg" />
-        </motion.div>
-      </div>
+      {/* First Row */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+  <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+    <img
+      src={img1}
+      alt="Jewellery 1"
+      className="w-full h-[300px] object-cover rounded-md shadow-md"
+    />
+  </motion.div>
+  <motion.div
+    variants={fadeInUp}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    custom={1}
+    className="bg-white flex flex-col items-center justify-center text-center p-6 rounded-md shadow-md min-h-[300px]"
+  >
+    <h2 className="text-lg font-bold uppercase mb-2 text-[#2C2C2C]">Up To 50% Off</h2>
+    <p className="text-sm text-gray-700 mb-3">
+      Discover exquisite gold and diamond sets that radiate tradition and opulence.
+    </p>
+    <button className="bg-black text-white px-5 py-2 text-xs uppercase hover:bg-[#D4AF37] hover:text-black transition rounded-full">
+      Shop Now
+    </button>
+  </motion.div>
+  <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}>
+    <img
+      src={img2}
+      alt="Jewellery 2"
+      className="w-full h-[300px] object-cover rounded-md shadow-md"
+    />
+  </motion.div>
+</div>
 
-      {/* Second Row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <img src={img3} alt="Jewellery 3" className="w-full h-full object-cover rounded-md shadow-lg" />
-        </motion.div>
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={1}
-          className="bg-white flex flex-col items-center justify-center text-center p-8 rounded-md shadow-xl"
-        >
-          <h2 className="text-xl font-bold uppercase mb-2 text-[#2C2C2C]">Timeless Heritage</h2>
-          <p className="text-sm text-gray-700 mb-4">
-            Inspired by royalty. Designed for modern elegance.
-          </p>
-          <button className="bg-black text-white px-6 py-2 text-sm uppercase hover:bg-[#D4AF37] hover:text-black transition rounded-full">
-            Explore More
-          </button>
-        </motion.div>
-        <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}>
-          <img src={img4} alt="Jewellery 4" className="w-full h-full object-cover rounded-md shadow-lg" />
-        </motion.div>
-      </div>
+{/* Second Row */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+  <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+    <img
+      src={img3}
+      alt="Jewellery 3"
+      className="w-full h-[220px] object-cover rounded-md shadow-md"
+    />
+  </motion.div>
+  <motion.div
+    variants={fadeInUp}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    custom={1}
+    className="bg-white flex flex-col items-center justify-center text-center p-6 rounded-md shadow-md min-h-[220px]"
+  >
+    <h2 className="text-lg font-bold uppercase mb-2 text-[#2C2C2C]">Timeless Heritage</h2>
+    <p className="text-sm text-gray-700 mb-3">
+      Inspired by royalty. Designed for modern elegance.
+    </p>
+    <button className="bg-black text-white px-5 py-2 text-xs uppercase hover:bg-[#D4AF37] hover:text-black transition rounded-full">
+      Explore More
+    </button>
+  </motion.div>
+  <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}>
+    <img
+      src={img4}
+      alt="Jewellery 4"
+      className="w-full h-[220px] object-cover rounded-md shadow-md"
+    />
+  </motion.div>
+</div>
 
-      {/* Third Row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <div className="col-span-2 grid grid-cols-2 gap-4">
-          <motion.img
-            src={img5}
-            alt="Jewellery 5"
-            className="w-full h-full object-cover rounded-md shadow-lg"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          />
-          <motion.img
-            src={img6}
-            alt="Jewellery 6"
-            className="w-full h-full object-cover rounded-md shadow-lg"
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={1}
-          />
-        </div>
-        <motion.div
-          className="flex flex-col items-center justify-center text-center bg-white p-6 rounded-md shadow-xl"
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          custom={2}
-        >
-          <h2 className="text-xl font-bold uppercase mb-2 text-[#2C2C2C]">Make A Statement</h2>
-          <p className="text-sm text-gray-700">
-            Bold, beautiful, and unforgettable — jewellery that defines you.
-          </p>
-        </motion.div>
-      </div>
+{/* Third Row */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+  <div className="col-span-2 grid grid-cols-2 gap-4">
+    <motion.img
+      src={img5}
+      alt="Jewellery 5"
+      className="w-full h-[280px] object-cover rounded-md shadow-md"
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    />
+    <motion.img
+      src={img6}
+      alt="Jewellery 6"
+      className="w-full h-[280px] object-cover rounded-md shadow-md"
+      variants={fadeInUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      custom={1}
+    />
+  </div>
+  <motion.div
+    className="flex flex-col items-center justify-center text-center bg-white p-6 rounded-md shadow-md min-h-[280px]"
+    variants={fadeInUp}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    custom={2}
+  >
+    <h2 className="text-lg font-bold uppercase mb-2 text-[#2C2C2C]">Make A Statement</h2>
+    <p className="text-sm text-gray-700">
+      Bold, beautiful, and unforgettable — jewellery that defines you.
+    </p>
+  </motion.div>
+</div>
+
 
      
 

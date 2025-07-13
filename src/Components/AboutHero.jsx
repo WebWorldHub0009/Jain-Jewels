@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import heroImage from "../assets/images/owner/abouthero.jpg";
+import heroImage from "../assets/images/abouthero.jpg";
 
 const shimmerText = {
   background: "linear-gradient(90deg, #D4AF37, #f5e7be, #D4AF37)",

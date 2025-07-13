@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import statsImage1 from "../assets/images/f1.jpg";
-import statsImage2 from "../assets/images/f2.jpg";
-import bgDiamond from "../assets/images/bg-diamond.jpg"; // Background image
+import statsImage1 from "../assets/images/n1.jpg";
+import statsImage2 from "../assets/images/n2.jpg";
+import bgDiamond from "../assets/images/bg-new.jpg"; // Background image
 
 import { FaRegGem, FaSmileBeam, FaRing, FaUsers } from "react-icons/fa";
 
@@ -23,7 +23,7 @@ const WebsiteStats = () => {
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-[#ffffff2d]"></div>
+      <div className="absolute inset-0 bg-[#ffffffd0]"></div>
 
       {/* Watermark */}
       <h1 className="italiana-font absolute text-[6rem] sm:text-[10rem] font-bold text-[#00000010] top-10 left-5 pointer-events-none z-90 uppercase tracking-widest italic hidden sm:block">

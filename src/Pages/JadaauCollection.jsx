@@ -22,15 +22,15 @@ import {
 import HeroJadauJewellery from "../Components/HeroJadaauJewellery";
 
 // Replace with real Jadaau images
-import g1 from "../assets/images/f1.jpg";
-import g2 from "../assets/images/f1.jpg";
-import g3 from "../assets/images/f1.jpg";
-import g4 from "../assets/images/f1.jpg";
-import g5 from "../assets/images/f1.jpg";
-import g6 from "../assets/images/f1.jpg";
-import g7 from "../assets/images/f1.jpg";
-import g8 from "../assets/images/f1.jpg";
-import g9 from "../assets/images/f1.jpg";
+import g1 from "../assets/images/jadaau/j1.jpg";
+import g2 from "../assets/images/jadaau/j2.jpg";
+import g3 from "../assets/images/jadaau/j3.jpg";
+import g4 from "../assets/images/jadaau/j4.jpg";
+import g5 from "../assets/images/jadaau/j5.jpg";
+import g6 from "../assets/images/jadaau/j6.jpg";
+import g7 from "../assets/images/jadaau/j7.jpg";
+import g8 from "../assets/images/jadaau/j8.jpg";
+import g9 from "../assets/images/jadaau/j9.jpg";
 
 const jadaauItems = [
   {
