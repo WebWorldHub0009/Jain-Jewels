@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import model from "../assets/images/f1.jpg"; // left image
 import product from "../assets/images/f2.jpg"; // right image
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const FeaturedSection = () => {
   return (
@@ -46,9 +47,11 @@ const FeaturedSection = () => {
             is crafted with passion, precision, and purpose. From radiant gold to
             elegant diamonds, each piece tells a story of excellence and trust.
           </p>
-          <button className="mt-2 inline-block px-6 py-2 border border-[#D4AF37] text-[#D4AF37] rounded-full font-medium hover:bg-[#D4AF37] hover:text-white transition-all duration-300">
+          <Link to='/contact'>
+          <button className="cursor-pointer mt-2 inline-block px-6 py-2 border border-[#D4AF37] text-[#D4AF37] rounded-full font-medium hover:bg-[#D4AF37] hover:text-white transition-all duration-300">
             Learn More
           </button>
+          </Link>
         </motion.div>
 
         {/* Right Image */}

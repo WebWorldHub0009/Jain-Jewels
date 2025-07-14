@@ -114,10 +114,10 @@ const JadaauCollection = () => {
       <div className="px-4 md:px-16 py-16 bg-gradient-to-b from-[#fdfbf7] to-white font-sans">
         {/* Heading */}
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-[#2C2C2C]">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-[#2C2C2C] italiana-font">
             Jadaau Collection
           </h1>
-          <p className="mt-4 text-gray-700 text-lg md:text-xl italic">
+          <p className="mt-4 text-gray-700 text-xl md:text-2xl signature-font tracking-wider">
             Experience the timeless beauty of Jadaau jewellery — handcrafted elegance blending tradition and artistry.
           </p>
         </div>

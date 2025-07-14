@@ -9,6 +9,7 @@ import img6 from "../assets/images/antique/a8.jpg";
 import img7 from "../assets/images/p1.jpg";
 import img8 from "../assets/images/p1.jpg";
 import img9 from "../assets/images/p1.jpg";
+import { Link } from "react-router-dom";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -42,7 +43,7 @@ const CollectionAbout = () => {
         </p>
       </motion.div>
 
-      {/* First Row */}
+    
       {/* First Row */}
 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
   <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
@@ -60,13 +61,15 @@ const CollectionAbout = () => {
     custom={1}
     className="bg-white flex flex-col items-center justify-center text-center p-6 rounded-md shadow-md min-h-[300px]"
   >
-    <h2 className="text-lg font-bold uppercase mb-2 text-[#2C2C2C]">Up To 50% Off</h2>
-    <p className="text-sm text-gray-700 mb-3">
+    <h2 className="text-lg font-bold italiana-font uppercase mb-2 text-[#2C2C2C]">Up To 30% Off</h2>
+    <p className="text-lg text-gray-700 mb-3 signature-font tracking-wider">
       Discover exquisite gold and diamond sets that radiate tradition and opulence.
     </p>
-    <button className="bg-black text-white px-5 py-2 text-xs uppercase hover:bg-[#D4AF37] hover:text-black transition rounded-full">
-      Shop Now
+    <Link to='/contact'>
+    <button className="cursor-pointer font-semibold bg-white border-[1px] border-black text-black px-5 py-2 text-xs uppercase hover:bg-black hover:text-white transition rounded-full">
+      Get Enquiry
     </button>
+    </Link>
   </motion.div>
   <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}>
     <img
@@ -94,13 +97,15 @@ const CollectionAbout = () => {
     custom={1}
     className="bg-white flex flex-col items-center justify-center text-center p-6 rounded-md shadow-md min-h-[220px]"
   >
-    <h2 className="text-lg font-bold uppercase mb-2 text-[#2C2C2C]">Timeless Heritage</h2>
-    <p className="text-sm text-gray-700 mb-3">
+    <h2 className="text-lg font-bold uppercase mb-2 italiana-font text-[#2C2C2C]">Timeless Heritage</h2>
+    <p className="text-lg text-gray-700 mb-3 signature-font tracking-wider">
       Inspired by royalty. Designed for modern elegance.
     </p>
-    <button className="bg-black text-white px-5 py-2 text-xs uppercase hover:bg-[#D4AF37] hover:text-black transition rounded-full">
-      Explore More
+    <Link to='/gallery'>
+    <button className="bg-white text-black border-[1px] border-black font-semibold px-5 py-2 text-xs uppercase hover:bg-black hover:text-white transition rounded-full">
+      Unveil Beauty
     </button>
+    </Link>
   </motion.div>
   <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2}>
     <img
@@ -142,8 +147,8 @@ const CollectionAbout = () => {
     viewport={{ once: true }}
     custom={2}
   >
-    <h2 className="text-lg font-bold uppercase mb-2 text-[#2C2C2C]">Make A Statement</h2>
-    <p className="text-sm text-gray-700">
+    <h2 className="text-lg font-bold uppercase mb-2 text-[#2C2C2C] italiana-font">Make A Statement</h2>
+    <p className="text-lg text-gray-700 tracking-wider signature-font">
       Bold, beautiful, and unforgettable — jewellery that defines you.
     </p>
   </motion.div>
@@ -160,9 +165,11 @@ const CollectionAbout = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <button className="px-8 py-3 bg-black text-white font-semibold rounded-full hover:bg-[#D4AF37] hover:text-black transition duration-300 tracking-wide shadow-lg">
-          Explore Full Collection
+       <Link to='/about'>
+        <button className="italiana-font cursor-pointer px-8 py-3 bg-white text-black border-[1px] border-black font-semibold rounded-full hover:bg-black hover:text-white transition duration-300 tracking-wide shadow-lg">
+          Explore Our Legacy
         </button>
+       </Link>
       </motion.div>
     </div>
   );

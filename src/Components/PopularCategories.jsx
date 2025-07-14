@@ -63,10 +63,12 @@ const PopularCategories = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 mb-16">
           {categories.map((cat, idx) => (
             <Link
-              to={cat.path}
-              key={idx}
-              className="flex flex-col items-center group transition-transform duration-300 hover:scale-105"
-            >
+  to={cat.path}
+  key={idx}
+  className={`flex flex-col items-center group transition-transform duration-300 hover:scale-105 
+    ${idx === 4 ? 'col-span-2 justify-center sm:col-span-1' : ''}`}
+>
+
               <div className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-full bg-[#FAF9F6] flex items-center justify-center overflow-hidden shadow-md floating-icon transition duration-500 group-hover:shadow-lg group-hover:shadow-black/50">
                 <img
                   src={cat.img}

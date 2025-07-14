@@ -114,11 +114,11 @@ const GoldCollection = () => {
       <div className="px-4 md:px-16 py-16 bg-gradient-to-b from-[#fdfbf7] to-white font-sans">
         {/* Heading */}
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-[#2C2C2C]">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-[#2C2C2C] italiana-font">
             Gold Collection
           </h1>
-          <p className="mt-4 text-gray-700 text-lg md:text-xl italic">
-            Explore Jain Jewels’ premium range of 18K & 22K gold jewelry — from bridal classics to everyday elegance.
+          <p className="mt-4 text-gray-700 text-xl md:text-2xl tracking-wider signature-font">
+            Explore Jain Jewels’ premium range of pure gold jewelry — from bridal classics to everyday elegance.
           </p>
         </div>
 

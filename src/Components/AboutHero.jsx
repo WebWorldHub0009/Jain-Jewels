@@ -42,7 +42,7 @@ const HeroAbout = () => {
         <motion.p
           animate={{ opacity: [0.8, 1, 0.8] }}
           transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-          className="text-xl md:text-2xl tracking-widest leading-relaxed text-gray-300 signature-font mb-6"
+          className="text-xl md:text-2xl tracking-widest leading-relaxed text-white signature-font mb-6"
         >
           With roots deep in tradition, Jain Jewellers blends timeless artistry
           with modern elegance. Each piece we craft tells a story of brilliance,
@@ -56,7 +56,7 @@ const HeroAbout = () => {
         >
           <Link
             to="/gallery"
-            className="inline-block px-8 py-3 bg-black text-white font-semibold border border-[#ffe89b] hover:bg-[#ffe89b] hover:text-black transition-all duration-300 rounded-full tracking-wider shadow-lg"
+            className="inline-block px-8 py-3 bg-black text-white font-semibold border border-[#ffe89b] hover:bg-black hover:text-white transition-all duration-300 rounded-full tracking-wider shadow-lg"
           >
             View Our Gallery
           </Link>

@@ -36,9 +36,9 @@ const AboutSection = () => {
           <p className="text-gray-600 text-xl max-w-md tracking-wider signature-font mt-3">
             For decades, we’ve celebrated tradition and elegance by designing exquisite jewellery that defines heritage and luxury.
           </p>
-          <Link to="/collection">
-            <button className="cursor-pointer mt-6 bg-[#D4AF37] hover:bg-[#ffe797] transition px-6 py-3 rounded-full text-white text-sm font-medium shadow-md">
-              Explore Collection
+          <Link to="/collection/gold">
+            <button className="cursor-pointer mt-6 bg-[#D4AF37] hover:bg-[#cfb768] transition px-6 py-3 rounded-full text-white text-sm font-medium shadow-md">
+              Explore Our Gold Collection
             </button>
           </Link>
 
