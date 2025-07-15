@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
 import { FaUserTie, FaGem, FaStar, FaChevronDown } from 'react-icons/fa';
-import aboutImg from '../assets/images/shop.jpg'; // Replace with Jain Jewels image
+import aboutImg from '../assets/images/shophd.png'; // Replace with Jain Jewels image
 import aboutBg from '../assets/images/whychoose-bg.jpg'; // Replace if needed
 import { Link } from 'react-router-dom';
 

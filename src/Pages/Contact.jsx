@@ -42,7 +42,7 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <h4 className="font-bold">Email</h4>
-                  <p>JainJewels4@gmail.com</p>
+                  <p>Info@jainjewels.in</p>
                   <p>JainJewels4@gmail.com</p>
                 </div>
                 <div>

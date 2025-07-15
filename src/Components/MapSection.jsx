@@ -9,7 +9,7 @@ const MapSection = () => {
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold italiana-font leading-tight">
             Visit Us at the Heart of Brilliance
           </h2>
-          <p className="mt-4 text-lg sm:text-lg md:text-xl text-gray-700 tracking-widest signature-font">
+          <p className="mt-4 text-xl sm:text-lg md:text-2xl text-gray-700 tracking-widest signature-font">
             Where timeless traditions meet shimmering craftsmanship in every corner.
           </p>
         </div>

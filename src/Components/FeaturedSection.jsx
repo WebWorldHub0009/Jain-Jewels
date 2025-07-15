@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import model from "../assets/images/f1.jpg"; // left image
+import model from "../assets/images/f1hd.png"; // left image
 import product from "../assets/images/f2.jpg"; // right image
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";

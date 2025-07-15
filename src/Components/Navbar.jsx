@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   FaFacebookF,
   FaYoutube,
@@ -13,12 +13,14 @@ import { IoDiamondOutline, IoChevronDownOutline } from "react-icons/io5";
 const ElegantNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState(""); // Search bar state
   const navRef = useRef();
+  const navigate = useNavigate();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
-  // Close mobile menu when clicking outside
+  // Close menu on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuOpen && navRef.current && !navRef.current.contains(event.target)) {
@@ -28,6 +30,15 @@ const ElegantNavbar = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [menuOpen]);
+
+  // Handle search
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim() !== "") {
+      navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchQuery("");
+    }
+  };
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -114,15 +125,21 @@ const ElegantNavbar = () => {
 
           {/* Right Side */}
           <div className="hidden md:flex items-center gap-4">
-            <div className="relative">
+            {/* Search Form */}
+            <form onSubmit={handleSearchSubmit} className="relative">
               <input
                 type="text"
                 placeholder="Search..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="px-4 py-1.5 pr-9 text-sm rounded-full border border-gray-300 bg-white shadow-sm focus:outline-none placeholder:text-sm"
               />
-              <FaSearch className="absolute right-3 top-2.5 text-[#D4AF37] text-sm" />
-            </div>
+              <button type="submit">
+                <FaSearch className="absolute right-3 top-2.5 text-[#D4AF37] text-sm" />
+              </button>
+            </form>
 
+            {/* Social Icons */}
             <div className="flex gap-3 text-[#2C2C2C] ml-2">
               {socialLinks.map((item, i) => (
                 <a
@@ -151,11 +168,12 @@ const ElegantNavbar = () => {
             menuOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
-          {/* Cross Icon Inside Panel */}
+          {/* Close Icon */}
           <div className="absolute top-4 right-4 text-xl cursor-pointer text-[#2C2C2C]" onClick={toggleMenu}>
             <FaTimes />
           </div>
 
+          {/* Mobile Nav Links */}
           <ul className="space-y-4 text-[#2C2C2C] text-sm font-medium mt-10">
             {navLinks.map((link) =>
               link.dropdown ? (
@@ -202,7 +220,6 @@ const ElegantNavbar = () => {
             )}
           </ul>
 
-          {/* Divider */}
           <div className="my-4 border-t border-gray-200" />
 
           {/* Contact Info */}

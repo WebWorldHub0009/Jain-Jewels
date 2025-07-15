@@ -153,7 +153,7 @@ const OwnerSection = () => {
       <style>{`
         .animate-scrollTestimonial {
           display: flex;
-          animation: scroll 25s linear infinite;
+          animation: scroll 15s linear infinite;
         }
 
         @keyframes scroll {

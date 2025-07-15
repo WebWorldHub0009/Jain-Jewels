@@ -11,7 +11,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import VisitorCounter from "./VisitorCounter";
 import Translator from "./Translator";
-import logo from "../assets/images/logo.jpg";
+import logo from "../assets/images/logo.png";
 import footerBg from "../assets/images/whychoose-bg.jpg";
 
 const containerVariants = {
@@ -45,7 +45,7 @@ export default function Footer() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-sm z-10 relative">
         {/* About */}
         <div className="flex flex-col space-y-3">
-          <img src={logo} alt="Jain Jewellers Logo" className="w-[80px] md:w-[120px]" />
+          <img src={logo} alt="Jain Jewellers Logo" className="w-[80px] md:w-[150px]" />
           <h4 className="text-gray-900 font-semibold mb-2">About Jain Jewellers</h4>
           <p className="leading-relaxed">
             Jain Jewellers, located in the heritage-rich Chandni Chowk, is trusted for hallmark-certified jewellery. We specialize in gold, kundan, antique, and custom-made pieces, reflecting decades of elegance, purity, and craftsmanship.

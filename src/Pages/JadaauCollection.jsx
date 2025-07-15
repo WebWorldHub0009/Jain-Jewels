@@ -21,7 +21,7 @@ import {
 } from "react-icons/fa";
 import HeroJadauJewellery from "../Components/HeroJadaauJewellery";
 
-// Replace with real Jadaau images
+// Images
 import g1 from "../assets/images/jadaau/j1.jpg";
 import g2 from "../assets/images/jadaau/j2.jpg";
 import g3 from "../assets/images/jadaau/j3.jpg";
@@ -122,85 +122,49 @@ const JadaauCollection = () => {
           </p>
         </div>
 
-        {/* Desktop Grid */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-10 mb-10">
-          {jadaauItems.map((item, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.03 }}
-              className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-300"
-            >
-              <div className="h-80 overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transform hover:scale-105 transition duration-500"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-[#2C2C2C] italic mb-2">
-                  {item.title}
-                </h3>
-                <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
-                  {item.icon}
-                  <span>{item.badge}</span>
-                </div>
-                <div className="mt-4 flex justify-between items-center">
-                  <div className="flex items-center gap-1 text-sm text-gray-600">
-                    {item.tagIcon}
-                    <span>{item.tag}</span>
-                  </div>
-                  <Link
-                    to="/contact"
-                    className="px-6 py-2 text-sm font-semibold bg-black text-white rounded-full hover:bg-gray-800 transition"
-                  >
-                    Enquire Now
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {/* Responsive Grid for All Screens */}
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {jadaauItems.map((item, i) => (
+    <motion.div
+      key={i}
+      whileHover={{ scale: 1.02 }}
+      className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 transition-all duration-300"
+    >
+      {/* Bigger Image */}
+      <div className="h-84 sm:h-72 md:h-80 lg:h-72 overflow-hidden">
+        <img
+          src={item.image}
+          alt={item.title}
+          className="w-full h-full object-cover transform hover:scale-105 transition duration-500"
+        />
+      </div>
 
-        {/* Mobile Scroll Cards */}
-        <div className="lg:hidden flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide pb-4">
-          {jadaauItems.map((item, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ scale: 1.02 }}
-              className="min-w-[85%] sm:min-w-[70%] snap-start bg-white rounded-2xl shadow-lg overflow-hidden flex-shrink-0 border border-gray-200"
-            >
-              <div className="h-64 overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transform hover:scale-105 transition duration-500"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-[#2C2C2C] italic mb-2">
-                  {item.title}
-                </h3>
-                <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
-                  {item.icon}
-                  <span>{item.badge}</span>
-                </div>
-                <div className="mt-4 flex justify-between items-center">
-                  <div className="flex items-center gap-1 text-xs text-gray-600">
-                    {item.tagIcon}
-                    <span>{item.tag}</span>
-                  </div>
-                  <Link
-                    to="/contact"
-                    className="px-5 py-2 text-sm font-semibold bg-black text-white rounded-full hover:bg-gray-800 transition"
-                  >
-                    Enquire Now
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+      {/* Content */}
+      <div className="p-5 sm:p-6">
+        <h3 className="text-base sm:text-lg md:text-xl font-semibold text-[#2C2C2C] italic mb-3">
+          {item.title}
+        </h3>
+        <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
+          {item.icon}
+          <span>{item.badge}</span>
         </div>
+        <div className="mt-2 flex justify-between items-center">
+          <div className="flex items-center gap-1 text-sm text-gray-600">
+            {item.tagIcon}
+            <span>{item.tag}</span>
+          </div>
+          <Link
+            to="/contact"
+            className="px-5 py-2 text-sm font-semibold bg-black text-white rounded-full hover:bg-gray-800 transition"
+          >
+            Enquire Now
+          </Link>
+        </div>
+      </div>
+    </motion.div>
+  ))}
+</div>
+
       </div>
     </>
   );
