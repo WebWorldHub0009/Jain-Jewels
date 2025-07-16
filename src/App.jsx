@@ -10,10 +10,14 @@ import JadaauCollection from "./Pages/JadaauCollection"
 import DiamondCollection from "./Pages/DiamondCollection"
 import AntiqueJewelleryCollection from "./Pages/AntiqueJewelleryCollection"
 import ItalianJewelleryCollection from "./Pages/ItallianJewelleryCollection"
+import Documents from "./Pages/Documents"
+import ScrollToTop from "./Components/ScrollToTop"
+import FloatingButtons from "./Components/FloatingButtons"
 
 function App() {
   return (
     <>
+    <ScrollToTop/>
     <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
@@ -25,8 +29,10 @@ function App() {
         <Route path="/collection/diamond" element={<DiamondCollection/>}/>
         <Route path="/collection/antique" element={<AntiqueJewelleryCollection/>}/>
         <Route path="/collection/italian" element={<ItalianJewelleryCollection/>}/>
+        <Route path="/documents" element={<Documents/>}/>
       </Routes>
       <Footer/>
+      <FloatingButtons/>
     </>
   )
 }

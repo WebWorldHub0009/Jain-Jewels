@@ -3,7 +3,6 @@ import {
   FaInstagram,
   FaYoutube,
   FaEnvelope,
-  FaSearchLocation,
 } from "react-icons/fa";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -18,6 +17,15 @@ const containerVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
+
+// ✅ Updated Collection Links
+const collections = [
+  { name: "Jadau", path: "/collection/jadau" },
+  { name: "Diamond Jewellery", path: "/collection/diamond" },
+  { name: "Gold Jewellery", path: "/collection/gold" },
+  { name: "Antique Jewellery", path: "/collection/antique" },
+  { name: "Italian Jewellery", path: "/collection/italian" },
+];
 
 export default function Footer() {
   const controls = useAnimation();
@@ -38,12 +46,13 @@ export default function Footer() {
         backgroundImage: `url(${footerBg})`,
       }}
     >
-      {/* Glowing Accents */}
+      {/* Glowing Background Accents */}
       <div className="absolute -top-20 left-[-100px] w-[300px] h-[300px] bg-yellow-300 blur-[130px] opacity-10 rounded-full -z-10" />
       <div className="absolute -bottom-20 right-[-100px] w-[300px] h-[300px] bg-yellow-300 blur-[150px] opacity-10 rounded-full -z-10" />
 
+      {/* Footer Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-sm z-10 relative">
-        {/* About */}
+        {/* About Jain Jewellers */}
         <div className="flex flex-col space-y-3">
           <img src={logo} alt="Jain Jewellers Logo" className="w-[80px] md:w-[150px]" />
           <h4 className="text-gray-900 font-semibold mb-2">About Jain Jewellers</h4>
@@ -69,7 +78,6 @@ export default function Footer() {
             {[
               ["Home", "/"],
               ["About", "/about"],
-              ["Collection", "/collection"],
               ["Gallery", "/gallery"],
               ["Contact", "/contact"],
               ["Documents", "/documents"],
@@ -82,6 +90,7 @@ export default function Footer() {
             ))}
           </ul>
 
+          {/* Email Links */}
           <h4 className="mt-6 text-gray-900 font-semibold">Emails</h4>
           <ul className="mt-2 space-y-2">
             {["Info@jainjewels.in", "JainJewels4@gmail.com"].map((email, i) => (
@@ -98,23 +107,17 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Our Collection */}
+        {/* Updated Our Collection */}
         <div>
           <h4 className="text-gray-900 font-semibold mb-4">Our Collection</h4>
           <ul className="space-y-2">
-            {[
-              "Gold Jewellery",
-              "Kundan Sets",
-              "Antique Collection",
-              "Polki Bridal Wear",
-              "Custom Designs",
-              "Diamond Elegance",
-              "Temple Jewellery",
-              "Modern Fusion Styles",
-            ].map((item, i) => (
+            {collections.map((item, i) => (
               <li key={i}>
-                <Link to="/collection" className="hover:text-yellow-600 transition duration-300">
-                  {item}
+                <Link
+                  to={item.path}
+                  className="hover:text-yellow-600 transition duration-300"
+                >
+                  {item.name}
                 </Link>
               </li>
             ))}
@@ -129,9 +132,13 @@ export default function Footer() {
             Kucha Mahajani, Chandni Chowk,<br />
             Delhi – 110006
           </address>
+
+          {/* Translator */}
           <div className="flex items-center gap-4 mb-4">
-            <div><Translator /></div>
+            <Translator />
           </div>
+
+          {/* Social Icons */}
           <div className="mt-6 flex space-x-4">
             <a
               href="https://www.facebook.com/aakashgargjain/"
@@ -161,7 +168,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom */}
+      {/* Footer Bottom Section */}
       <div className="mt-10 text-center text-xs text-gray-600 border-t border-gray-300 pt-6 space-y-2 relative z-10">
         <VisitorCounter />
         <p>© {new Date().getFullYear()} Jain Jewellers. All rights reserved.</p>

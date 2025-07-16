@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import catalogue from "../assets/documents/catalogue.pdf";
 
 // Desktop Images
 import jj1 from "../assets/images/s6hd.png";
@@ -12,9 +13,7 @@ import jm1 from "../assets/images/ms1.jpg";
 import jm2 from "../assets/images/ms2.jpg";
 import jm3 from "../assets/images/ms3.jpg";
 import jm4 from "../assets/images/ms4.jpg";
-import { Link } from "react-router-dom";
 
-// Slides
 const jainSlidesDesktop = [
   {
     image: jj1,
@@ -42,8 +41,6 @@ const jainSlidesDesktop = [
   },
 ];
 
-
-
 const jainSlidesMobile = [
   {
     image: jm1,
@@ -67,7 +64,6 @@ const jainSlidesMobile = [
   },
 ];
 
-
 const JainJewelsSliderCore = ({ slides }) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [animating, setAnimating] = useState(true);
@@ -83,6 +79,10 @@ const JainJewelsSliderCore = ({ slides }) => {
 
     return () => clearInterval(interval);
   }, [slides.length]);
+
+  const openCatalogue = () => {
+    window.open(catalogue, "_blank");
+  };
 
   return (
     <section className="relative w-full h-screen overflow-hidden z-[99] font-sans">
@@ -102,29 +102,32 @@ const JainJewelsSliderCore = ({ slides }) => {
       </AnimatePresence>
 
       {/* Overlay Content */}
-      <div className="absolute inset-0  z-10 flex items-center justify-between md:justify-end px-6 md:px-20">
+      <div className="absolute inset-0 z-10 flex items-center justify-between md:justify-end px-6 md:px-20">
         <motion.div
           key={currentImage}
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className=" max-w-xl text-gray-100 text-center md:text-left md:text-black "
+          className="max-w-xl text-gray-100 text-center md:text-left md:text-black"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl mb-4 italic font-[500] tracking-wide font-serif"
-              style={{ fontFamily: `'Great Vibes', cursive` }}>
+          <h2
+            className="text-4xl sm:text-5xl md:text-6xl mb-4 italic font-[500] tracking-wide font-serif"
+            style={{ fontFamily: `'Great Vibes', cursive` }}
+          >
             {slides[currentImage].title}
           </h2>
           <p className="text-sm sm:text-base md:text-lg mb-6 drop-shadow-md leading-relaxed font-light">
             {slides[currentImage].description}
           </p>
-          <Link to='/about'>
-          <button className="cursor-pointer border px-6 py-2 rounded-sm uppercase tracking-wider transition duration-300
-  text-white border-white hover:bg-white hover:text-black 
-  md:text-black md:border-black md:hover:bg-gray-100 md:hover:text-black">
-  Know More
-</button>
-          </Link>
 
+          <button
+            onClick={openCatalogue}
+            className="cursor-pointer border px-6 py-2 rounded-sm uppercase tracking-wider transition duration-300
+              text-white border-white hover:bg-white hover:text-black 
+              md:text-black md:border-black md:hover:bg-gray-100 md:hover:text-black"
+          >
+            See Catalogue
+          </button>
         </motion.div>
       </div>
     </section>
@@ -134,12 +137,9 @@ const JainJewelsSliderCore = ({ slides }) => {
 const JainJewelsSlider = () => {
   return (
     <>
-      {/* Desktop & Tablet */}
       <div className="hidden md:block">
         <JainJewelsSliderCore slides={jainSlidesDesktop} />
       </div>
-
-      {/* Mobile */}
       <div className="block md:hidden">
         <JainJewelsSliderCore slides={jainSlidesMobile} />
       </div>
